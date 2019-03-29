@@ -20,9 +20,24 @@ public class ShellSort implements Sort {
     /**
      * {@inheritDoc}
      */
+    @Override
     public void sort(int[] array) {
+      int n = array.length; 
+      for (int gap = n/2; gap > 0; gap /= 2){  
+             for (int i = gap; i < n; i += 1){ 
+                   int swap = array[i]; 
+      }
+                  int j; 
+          int swap = 0;
+          int i = 0;
+                      for (j = i; j >= gap && array[j - gap] > swap; j -= gap) 
+                    array[j] = array[j - gap]; 
+  
+                array[j] = swap; 
+            } 
+        } 
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
     }
-}
+
