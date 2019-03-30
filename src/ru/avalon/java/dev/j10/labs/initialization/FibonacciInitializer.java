@@ -33,7 +33,7 @@ public class FibonacciInitializer implements Initializer {
     public void initialize(int[] array) {
         
         
-        
+      if (array==null) return;  
         array[0] = 1;  // Присвиваем 2 начальных значения
         array[1] = 1;
         

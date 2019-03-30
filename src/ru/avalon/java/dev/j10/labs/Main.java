@@ -15,6 +15,8 @@ public class Main {
         int[] array =new int[20];
         int summArray = 0;
         
+//         последовательности чисел Фибоначчи.
+	      
         FibonacciInitializer  fibo = new FibonacciInitializer() ;
         fibo.initialize(array);
         for (int element : array) summArray += element;
@@ -24,24 +26,25 @@ public class Main {
         RandomInitializer rand = new RandomInitializer(-50, 50);
         rand.initialize(array);
         
+//        сортировка пузырьком
         BubbleSort buble = new BubbleSort();
         buble.sort(array);
         
-        System.out.println(" массив пузырьком : " + Arrays.toString(array));
+        System.out.println(" Сортировка  пузырьком : " + Arrays.toString(array));
         
         rand.initialize(array);
-        
+//        сортировка выбором
         SelectionSort sel = new SelectionSort();
         sel.sort(array);
         
-        System.out.println(" массив выбором : " + Arrays.toString(array));
+        System.out.println(" Сортировка выбором : " + Arrays.toString(array));
         
         rand.initialize(array);
-        
+//        сортировка массива методом Шелла
         ShellSort shell = new ShellSort();
         shell.sort(array);
         
-        System.out.println(" массив Шеллом : " + Arrays.toString(array));
+        System.out.println(" Сортировка  Шеллом : " + Arrays.toString(array));
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
 	     *
