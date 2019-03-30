@@ -1,10 +1,50 @@
 package ru.avalon.java.dev.j10.labs;
 
+import ru.avalon.java.dev.j10.labs.initialization.FibonacciInitializer;
+import ru.avalon.java.dev.j10.labs.initialization.RandomInitializer;
+import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
+import ru.avalon.java.dev.j10.labs.sort.SelectionSort;
+import ru.avalon.java.dev.j10.labs.sort.ShellSort;
+import java.util.Arrays;
+
+
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] array;
-
+        int[] array =new int[20];
+        int summArray = 0;
+        
+//         последовательности чисел Фибоначчи.
+	      
+        FibonacciInitializer  fibo = new FibonacciInitializer() ;
+        fibo.initialize(array);
+        for (int element : array) summArray += element;
+        
+        System.out.println("Сумма элементов массива: " + summArray);
+        
+        RandomInitializer rand = new RandomInitializer(-50, 50);
+        rand.initialize(array);
+        
+//        сортировка пузырьком
+        BubbleSort buble = new BubbleSort();
+        buble.sort(array);
+        
+        System.out.println(" Сортировка  пузырьком : " + Arrays.toString(array));
+        
+        rand.initialize(array);
+//        сортировка выбором
+        SelectionSort sel = new SelectionSort();
+        sel.sort(array);
+        
+        System.out.println(" Сортировка выбором : " + Arrays.toString(array));
+        
+        rand.initialize(array);
+//        сортировка массива методом Шелла
+        ShellSort shell = new ShellSort();
+        shell.sort(array);
+        
+        System.out.println(" Сортировка  Шеллом : " + Arrays.toString(array));
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
 	     *
